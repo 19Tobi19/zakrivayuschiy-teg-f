@@ -40,7 +40,7 @@
 
 .like-icon.is-liked .heart {
     transform-origin: center;
-    animation: scale 0.3s 0.3s ease-in;
+    animation: scale 0.3s ease-in 0.1s;
 }
 
 .like-icon.is-liked .sparks {
