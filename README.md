@@ -1,3 +1,1 @@
-eteritev
-rsevmriesvm
-rsivemrsemv
+https://github.com/19Tobi19/zakrivayuschiy-teg-f
