@@ -53,7 +53,7 @@
 }
 
 .page {
-  font-family: var(--font-family-main);
+  font-family: var(--font-family-main), sans-serif;
   font-variation-settings: "wght" var(--font-weight-main);
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -124,7 +124,7 @@
 }
 
 .card-label {
-  font-family: var(--font-family-accent);
+  font-family: var(--font-family-accent),fantasy;
   font-size: 14px;
   font-weight: var(--font-weight-main);
   position: absolute;
@@ -207,7 +207,7 @@
 }
 
 .button__text {
-  font-family: var(--font-family-accent);
+  font-family: var(--font-family-accent),fantasy;
   font-weight: var(--font-weight-main);
   font-size: 14px;
   position: relative;
@@ -302,7 +302,7 @@
 
 .dialog[open]::backdrop {
   background-color: #000;
-  filter: opacity(0.80);
+  filter: opacity(0.75);
 }
 
 .dialog-description {
@@ -318,7 +318,7 @@
 }
 
 .dialog-text {
-  font-family: var(--font-family-accent);
+  font-family: var(--font-family-accent),fantasy;
   font-size: 14px;
   line-height: 150%;
   max-inline-size: 234px;
