@@ -7,10 +7,341 @@
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
-
 */
 
+/*IMG FILTER*/
+
+.filter-saturate{
+  filter: saturate(1.5);
+}
+
+.filter-contrast{
+  filter: contrast(1.1);
+}
+
+.filter-brightness{
+  filter: brightness(85%);
+}
+
+.filter-hue-rotate{
+  filter: hue-rotate(25deg);
+}
+
+.filter-drop-shadow{
+  filter: drop-shadow(2px 4px 6px #000);
+}
+
+.filter-opacity{
+  filter: opacity(0.9);
+}
+
+.filter-set{
+  filter: blur(2px) hue-rotate(45deg);
+}
+
+.filter-grayscale{
+  filter: grayscale(25%);
+}
+
+/*SVG*/
+.icon{
+  position: relative;
+  z-index: 1;
+  color: var(--main-background-color);
+  mix-blend-mode: difference;
+  inline-size: 21px;
+}
+
 .page {
+  font-family: var(--font-family-main);
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  padding-block-start: 100px;
+  padding-block-end: 100px;
+  color: var(--main-text-color);
+  background-image: var(--page-background-image);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/*HEADER*/
+
+.header{
+  background-color: var(--main-background-color);
+  font-family: var(--font-family-accent), fantasy;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border: var(--border);
+  margin-inline: auto;
+  max-inline-size: 700px;
+  min-inline-size: 375px;
+  margin-block-end: 100px;
+  padding:clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem) clamp(0.875rem, -1.4688rem + 10vw, 7.53125rem);
+}
+
+.header-title{
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.header-description{
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+
+/*MAIN*/
+
+.main{
+  margin-inline: auto;
+  max-inline-size: 700px;
+}
+
+.card-list{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.card{
+  background-color: var(--main-background-color);
+  border:var(--border);
+  inline-size: var(--card-inline-size);
+}
+
+.card-header{
+  padding: 4px 10px;
+  font-size: 18px;
+  font-variation-settings:  var(--font-weight-heading);
+}
+
+.card-img{
+  position: relative;
+  margin-block-start: 1px;
+  border-block-start: var(--border);
+  border-block-end: var(--border);
+}
+
+.card-label{
+  font-family: var(--font-family-accent);
+  font-size: 14px;
+  font-weight: var(--font-weight-main);
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 1;
+  text-shadow: var(--text-shadow-label);
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+}
+
+@supports (-webkit-text-stroke: 1px var(--main-background-color)) {
+.card-label {
+  text-shadow: none;
+  -webkit-text-stroke: 1px var(--main-background-color);
+  }
+}
+
+.image{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  inline-size: 100%;
+  block-size: 100%;
+  display: block;
+}
+
+.card-description{
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  padding: 25px 25px 0;
+}
+
+.description-text{
+}
+
+.card-footer{
+  padding: 25px 25px 23px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 6px;
+}
+
+.button{
+  background-color: var(--main-background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  position: relative;
+  border: var(--border);
+}
+
+.button:focus{
+  outline: none;
+}
+
+.card__like-button:focus-visible,
+.save-button:focus-visible,
+.dialog-button:focus-visible{
+  box-shadow: var(--box-shadow);
+}
+
+.card__like-button::before,
+.save-button::before,
+.dialog-button::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #000;
+  transition: 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.card__like-button:hover::before,
+.save-button:hover::before,
+.dialog-button:hover::before{
+  transform: scaleX(1);
+}
+
+.button__text{
+  font-family: var(--font-family-accent);
+  font-weight: var(--font-weight-main);
+  font-size: 14px;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  mix-blend-mode: difference;
+}
+
+.card__like-button{
+  inline-size: 130px;
+  block-size: 40px;
+}
+
+.save-button{
+  padding: 15px 20px;
+  gap: 8px;
+}
+
+.card__icon-button{
+  border: none;
+  padding: 0;
+}
+
+.card__icon-button:focus-visible{
+  outline: var(--border);
+}
+
+.core,.main-body{
+  transition: 0.3s linear;
+  fill: transparent;
+}
+
+.core{
+  transition-delay: 0.03s;
+}
+
+.contour{
+  fill: var(--control-svg-color);
+}
+
+.like-icon .sparks{
+  fill: var(--filling-svg-color);
+  opacity: 0;
+}
+
+.card__icon-button:hover .core{
+  fill: var(--control-svg-color);
+}
+
+.card__icon-button:hover .main-body{
+  transition-delay: 0.05s;
+  fill: var(--control-svg-color);
+}
+
+.card__icon-button:active .core{
+  fill: var(--filling-svg-color);
+}
+
+.card__icon-button:active .main-body{
+  transition-delay: 0.05s;
+  fill: var(--filling-svg-color);
+}
+
+.like-icon.is-liked .core{
+  fill: var(--filling-svg-color);
+}
+
+.like-icon.is-liked .main-body{
+  transition-delay: 0.05s;
+  fill: var(--filling-svg-color);
+}
+
+.like-icon.is-liked .contour{
+  transition-delay: 0.06s;
+  fill: var(--filling-svg-color);
+}
+
+/*FOOTER*/
+
+.save-zone{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+/*POPUP*/
+
+.dialog{
+padding: 30px;
+}
+
+.dialog[open]::backdrop{
+  background-color: #000;
+  filter: opacity(0.80);
+}
+
+.dialog-description{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.icon-dialog{
+inline-size: 39px;
+}
+
+.dialog-text{
+  font-family: var(--font-family-accent);
+  font-size: 14px;
+  line-height: 150%;
+  max-inline-size: 234px;
+}
+
+.dialog-button{
+  width: 100%;
+  padding: 12.5px 0;
+}
+
+@media (width <= 375px){
+  .save-zone{
+    margin-top: 49px;
+  }
+  .save-button{
+    flex-direction: column;
+  }
+  .save-button .icon{
+    inline-size: 28px;
+  }
+  .card-label{
+    top: 22px;
+    right: 11px;
+  }
 }
