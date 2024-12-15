@@ -54,6 +54,7 @@
 
 .page {
   font-family: var(--font-family-main);
+  font-variation-settings: "wght" var(--font-weight-main);
   min-inline-size: 320px;
   min-block-size: 100dvb;
   padding-block-start: 100px;
@@ -112,7 +113,7 @@
 .card-header {
   padding: 4px 10px;
   font-size: 18px;
-  font-variation-settings: var(--font-weight-heading);
+  font-variation-settings: "wght" var(--font-weight-heading);
 }
 
 .card-img {
@@ -157,8 +158,6 @@
   gap: 27px;
   padding: 25px 25px 0;
 }
-
-.description-text {}
 
 .card-footer {
   padding: 25px 25px 23px;
