@@ -78,9 +78,10 @@
   border: var(--border);
   margin-inline: auto;
   max-inline-size: 700px;
-  min-inline-size: 375px;
+  min-inline-size: 320px;
   margin-block-end: 100px;
-  padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem) clamp(0.875rem, -1.4688rem + 10vw, 7.53125rem);
+  padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem)
+    clamp(0.875rem, -1.4688rem + 10vw, 7.53125rem);
 }
 
 .header-title {
@@ -124,7 +125,7 @@
 }
 
 .card-label {
-  font-family: var(--font-family-accent),fantasy;
+  font-family: var(--font-family-accent), fantasy;
   font-size: 14px;
   font-weight: var(--font-weight-main);
   position: absolute;
@@ -207,7 +208,7 @@
 }
 
 .button__text {
-  font-family: var(--font-family-accent),fantasy;
+  font-family: var(--font-family-accent), fantasy;
   font-weight: var(--font-weight-main);
   font-size: 14px;
   position: relative;
@@ -259,6 +260,7 @@
 }
 
 .card__icon-button:hover .core {
+  transition-delay: 0s;
   fill: var(--control-svg-color);
 }
 
@@ -268,21 +270,22 @@
 }
 
 .card__icon-button:active .core {
+  transition-delay: 0s;
   fill: var(--filling-svg-color);
 }
 
-.like-icon.is-liked .contour{
+.like-icon.is-liked .contour {
   fill: var(--filling-svg-color);
   transition: 0.3s linear;
   transition-delay: 0.06s;
 }
-.like-icon.is-liked .core{
+.like-icon.is-liked .core {
   fill: var(--filling-svg-color);
   transition: 0.3s linear;
   transition-delay: 0s;
 }
 
-.like-icon.is-liked .main-body{
+.like-icon.is-liked .main-body {
   fill: var(--filling-svg-color);
   transition: 0.3s linear;
   transition-delay: 0.05s;
@@ -316,12 +319,13 @@
 }
 
 .icon-dialog {
-  inline-size: 39px;
+  max-inline-size: 39px;
+  min-inline-size: 39px;
 }
 
 .dialog-text {
   text-transform: uppercase;
-  font-family: var(--font-family-accent),fantasy;
+  font-family: var(--font-family-accent), fantasy;
   font-size: 14px;
   line-height: 150%;
   max-inline-size: 234px;
@@ -348,5 +352,11 @@
   .card-label {
     top: 22px;
     right: 11px;
+  }
+}
+
+@media (width < 375px) {
+  .dialog {
+    min-inline-size: 100%;
   }
 }

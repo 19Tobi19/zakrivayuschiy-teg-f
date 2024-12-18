@@ -1,19 +1,24 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-    --font-family-accent: "PressStart2P";
-    --font-family-main: "Inter-Variable";
-    --main-text-color: #000;
-    --font-weight-heading: 700;
-    --font-weight-main: 400;
-    --main-background-color: #fff;
-    --main-color: #000;
-    --border: 2px solid #000;
-    --text-shadow-label: 0 0 1px #fff;
-    --box-shadow: 2px 2px #000;
-    --page-background-image:  repeating-linear-gradient(to left, #d3d3d3 0 2px, #d3d3d300 2px 4px), repeating-linear-gradient(to bottom, #d3d3d3 0 2px, #d3d3d300 2px 4px), linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
-    --card-inline-size:  clamp(375px, 100vw, 700px);
-    --control-svg-color: #000;
-    --filling-svg-color: #FF0000;
-    --main-svg-color: #000;
-
+  --font-family-accent: "PressStart2P";
+  --font-family-main: "Inter-Variable";
+  --main-text-color: #000;
+  --font-weight-heading: 700;
+  --font-weight-main: 400;
+  --main-background-color: #fff;
+  --main-color: #000;
+  --border: 2px solid #000;
+  --text-shadow-label: 0 0 1px #fff;
+  --box-shadow: 2px 2px #000;
+  --page-background-image: repeating-linear-gradient(
+      to left,
+      #d3d3d3 0 2px,
+      #d3d3d300 2px 4px
+    ),
+    repeating-linear-gradient(to bottom, #d3d3d3 0 2px, #d3d3d300 2px 4px),
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+  --card-inline-size: clamp(320px, 100%, 700px);
+  --control-svg-color: #000;
+  --filling-svg-color: #ff0000;
+  --main-svg-color: #000;
 }
